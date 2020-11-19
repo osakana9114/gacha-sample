@@ -13,16 +13,21 @@ const App: React.FC = () => {
         <div className="App">
             <header>
                 <h1>クーポンガチャ🤖</h1>
-                <a href="https://demae-can.com/link/cam/list" target="_blank" rel="noreferrer">
-                    出前館 クーポン・キャンペーン</a>
             </header>
-            <img src={gachaImage} className="shake" alt="ガチャガチャ"/>
 
+            <body>
             <div>
                 <b>{coupon.code}</b>
                 <p>{coupon.name}</p>
                 <button onClick={handleCoupon}>ガチャをまわす</button>
             </div>
+            <img src={gachaImage} className="shake" alt="ガチャガチャ"/>
+            </body>
+
+            <footer>
+                <a href="https://demae-can.com/link/cam/list" target="_blank" rel="noreferrer">
+                    出前館 クーポン・キャンペーン</a>
+            </footer>
         </div>
     )
 }
