@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useCallback} from 'react';
 import './App.css';
+import gachaImage from './gachagacha.png';
+import {Coupon, Lottery} from './lottery';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App: React.FC = () => {
+    const [coupon, setCoupon] = useState<Coupon>({code: '', name: ''})
+    const handleCoupon = useCallback(() => {
+        setCoupon(prevState => new Lottery().getCoupon())
+    }, [])
+
+    return (
+        <div className="App">
+            <header>
+                <h1>クーポンガチャ🤖</h1>
+                <a href="https://demae-can.com/link/cam/list" target="_blank" rel="noreferrer">
+                    出前館 クーポン・キャンペーン</a>
+            </header>
+            <img src={gachaImage} className="shake" alt="ガチャガチャ"/>
+
+            <div>
+                <b>{coupon.code}</b>
+                <p>{coupon.name}</p>
+                <button onClick={handleCoupon}>ガチャをまわす</button>
+            </div>
+        </div>
+    )
 }
 
 export default App;
