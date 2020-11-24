@@ -18,7 +18,7 @@ export class Liff {
     liffId: string
 
     constructor() {
-        this.liffId = process.env.LIFF_ID!
+        this.liffId = process.env.REACT_APP_LIFF_ID!
     }
 
     initializeLiff() {
