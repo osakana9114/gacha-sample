@@ -6,7 +6,8 @@ export type liffData = {
     lineVersion: string | null,
     isLiff: boolean,
     isLoggedIn: boolean,
-    os: any
+    os: any,
+    profile: any
 }
 
 type lineMessage = {
@@ -25,6 +26,9 @@ export class Liff {
         liff.init({
             liffId: this.liffId
         }).then(() => {
+            // if (!liff.isLoggedIn()) {
+            //     liff.login()
+            // }
             this.initializeApp()
         }).catch((error) => {
             console.error(`LIFF:初期化エラー | [ ${error.code} ] ${error.message}`)
@@ -44,7 +48,8 @@ export class Liff {
             lineVersion: liff.getLineVersion(),
             isLiff: liff.isInClient(),
             isLoggedIn: liff.isLoggedIn(),
-            os: liff.getOS()
+            os: liff.getOS(),
+            profile: liff.getProfile()
         }
     }
 
