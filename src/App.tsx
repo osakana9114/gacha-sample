@@ -49,7 +49,6 @@ const App: React.FC = () => {
                     <li>OS: {data.os}</li>
                     <li>isLiff: {data.isLiff ? 'yes' : 'no'}</li>
                     <li>isLoggedIn: {data.isLoggedIn ? 'yes' : 'no'}</li>
-                    <li>Profile: {data.profile}</li>
                 </div>
             </footer>
         </div>

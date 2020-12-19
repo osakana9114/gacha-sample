@@ -6,8 +6,7 @@ export type liffData = {
     lineVersion: string | null,
     isLiff: boolean,
     isLoggedIn: boolean,
-    os: any,
-    profile: any
+    os: any
 }
 
 type lineMessage = {
@@ -48,8 +47,7 @@ export class Liff {
             lineVersion: liff.getLineVersion(),
             isLiff: liff.isInClient(),
             isLoggedIn: liff.isLoggedIn(),
-            os: liff.getOS(),
-            profile: liff.getProfile()
+            os: liff.getOS()
         }
     }
 
